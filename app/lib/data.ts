@@ -1,6 +1,7 @@
 import { sql } from "@vercel/postgres";
 import { Post } from "./definition";
 
+//get all posts
 export async function fetchPosts() {
   try {
     const data = await sql<Post>`
@@ -12,6 +13,7 @@ export async function fetchPosts() {
   }
 }
 
+//get a post by id
 export async function fetchPostById(id: string) {
   try {
     const data = await sql<Post>`
