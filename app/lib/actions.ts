@@ -11,7 +11,9 @@ const FormSchema = z.object({
 });
 
 const CreatePost = FormSchema.omit({});
+const UpdatePost = FormSchema.omit({});
 
+//add post
 export async function createPost(formData: FormData) {
   const { title, content } = CreatePost.parse({
     title: formData.get("title"),
@@ -22,6 +24,23 @@ export async function createPost(formData: FormData) {
       INSERT INTO posts (title, content)
       VALUES (${title}, ${content})
     `;
+
+  revalidatePath("/posts");
+  redirect("/posts");
+}
+
+//edit post
+export async function updatePost(id: string, formData: FormData) {
+  const { title, content } = UpdatePost.parse({
+    title: formData.get("title"),
+    content: formData.get("content"),
+  });
+
+  await sql`
+    UPDATE posts
+    SET  title = ${title}, content = ${content}
+    WHERE id = ${id}
+  `;
 
   revalidatePath("/posts");
   redirect("/posts");
