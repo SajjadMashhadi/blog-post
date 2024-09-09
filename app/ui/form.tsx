@@ -5,7 +5,6 @@ import { Post } from "@/app/lib/definition";
 import { useFormStatus, useFormState } from "react-dom";
 
 export default function Form({ post }: { post?: Post }) {
-  // const updatePostWithId = post ? updatePost.bind(null, post.id) : updatePost;
   const updatePostWithId = updatePost.bind(null, post ? post.id : "");
 
   const initialState: State = { message: null, errors: {} };

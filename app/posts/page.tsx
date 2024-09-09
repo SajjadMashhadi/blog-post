@@ -1,11 +1,21 @@
 import { Suspense } from "react";
-import { fetchPosts } from "../lib/data";
+import { fetchPosts, fetchPostsPages } from "../lib/data";
 import Loading from "./loading";
 import Link from "next/link";
 import { DeletePost } from "../ui/buttons";
+import Pagination from "../ui/pagination";
 
-export default async function Page() {
-  const posts = await fetchPosts();
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: {
+    page?: string;
+  };
+}) {
+  const currentPage = Number(searchParams?.page) || 1;
+
+  const posts = await fetchPosts(currentPage);
+  const totalPages = await fetchPostsPages();
 
   return (
     <Suspense fallback={<Loading />}>
@@ -37,6 +47,7 @@ export default async function Page() {
             </div>
           ))}
         </div>
+        <Pagination totalPages={totalPages} />
       </div>
     </Suspense>
   );
