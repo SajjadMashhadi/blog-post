@@ -1,13 +1,12 @@
+import { Suspense } from "react";
 import { fetchPosts } from "../lib/data";
+import Loading from "./loading";
 
 export default async function Page() {
   const posts = await fetchPosts();
-  if (posts) {
-    console.log(posts);
-  }
-  console.log(posts);
-  if (posts) {
-    return (
+
+  return (
+    <Suspense fallback={<Loading />}>
       <div>
         <div>
           {posts.rows.map((post) => (
@@ -15,7 +14,6 @@ export default async function Page() {
           ))}
         </div>
       </div>
-    );
-  }
-  return <div></div>;
+    </Suspense>
+  );
 }

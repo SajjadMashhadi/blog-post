@@ -1,3 +1,9 @@
-export default function Page() {
-  return <p>add post</p>;
+import Form from "../ui/form";
+
+export default async function Page() {
+  return (
+    <div>
+      <Form />
+    </div>
+  );
 }
