@@ -1,8 +1,8 @@
 import { Suspense } from "react";
-import { fetchPosts, fetchPostsPages } from "../lib/data";
+import { fetchPosts, fetchPostsPages } from "../../lib/data";
 import Loading from "./loading";
-import Pagination from "../ui/pagination";
-import PostCard from "../ui/postCard";
+import Pagination from "../../ui/pagination";
+import PostCard from "../../ui/postCard";
 
 export default async function Page({
   searchParams,
