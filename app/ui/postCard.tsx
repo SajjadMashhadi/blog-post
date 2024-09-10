@@ -4,10 +4,7 @@ import { Post } from "@/app/lib/definition";
 
 export default function PostCard({ post }: { post: Post }) {
   return (
-    <div
-      className="w-full md:w-[48%] lg:w-[30%] xl:w-[32%] h-fit rounded-[10px] bg-gray-50 p-[20px] flex flex-col "
-      key={post.id}
-    >
+    <div className="w-full md:w-[48%] lg:w-[30%] xl:w-[32%] h-fit rounded-[10px] bg-gray-50 p-[20px] flex flex-col ">
       <Link
         className="font-bold text-gray-500 capitalize"
         href={`/posts/${post.id}`}

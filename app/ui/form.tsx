@@ -46,12 +46,12 @@ export default function Form({ post }: { post?: Post }) {
           ))}
       </div>
 
-      <div className="w-full flex flex-row justify-center gap-[20px]">
+      <div className="w-full flex flex-col sm:flex-row px-[20px] sm:p-0 justify-center gap-[20px]">
         <label className="w-[80px]" htmlFor="title">
           Title:{" "}
         </label>
         <input
-          className=" w-[400px] border-[1px] border-blue-300 rounded-[5px] p-[5px]"
+          className=" w-full sm:w-[400px] border-[1px] border-blue-300 rounded-[5px] p-[5px] focus:outline-blue-500"
           id="title"
           name="title"
           type="text"
@@ -63,7 +63,7 @@ export default function Form({ post }: { post?: Post }) {
         id="content-error"
         aria-live="polite"
         aria-atomic="true"
-        className="h-[20px]"
+        className="h-[20px] "
       >
         {state.errors?.content &&
           state.errors.content.map((error: string) => (
@@ -78,12 +78,12 @@ export default function Form({ post }: { post?: Post }) {
             </p>
           ))}
       </div>
-      <div className=" w-full flex flex-row justify-center gap-[20px]">
+      <div className=" w-full flex flex-col px-[20px] sm:p-0 sm:flex-row justify-center gap-[20px]">
         <label className="w-[80px]" htmlFor="content">
           Content:{" "}
         </label>
         <textarea
-          className="w-[400px] h-[300px] border-[1px] border-blue-300 rounded-[5px] p-[5px]"
+          className="w-full sm:w-[400px] h-[300px] border-[1px] border-blue-300 rounded-[5px] p-[5px] focus:outline-blue-500"
           id="content"
           name="content"
           defaultValue={post ? post.content : ""}
