@@ -20,10 +20,7 @@ export default function Error({
       </h2>
       <button
         className="border-blue-500 hover:bg-blue-50 border-[1px] p-[5px] px-[20px] capitalize  rounded-[5px] text-blue-500 mt-[50px]"
-        onClick={
-          // Attempt to recover by trying to re-render the invoices route
-          () => reset()
-        }
+        onClick={() => reset()}
       >
         Try again
       </button>

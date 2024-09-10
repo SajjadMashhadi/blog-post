@@ -37,9 +37,9 @@ export function FormSkeleton() {
 
 export function PostSkeleton() {
   return (
-    <div className="flex flex-col gap-[50px] mt-[20px] items-center capitalize">
+    <div className="flex flex-col gap-[50px] mt-[20px] items-center capitalize px-[50px] lg:px-0">
       <h2 className="text-[24px] font-bold h-[40px] w-[200px] rounded-[10px] capitalize bg-gray-50"></h2>
-      <p className="text-gray-500 w-[800px] h-[300px] text-justify  rounded-[10px] capitalize bg-gray-50"></p>
+      <p className="text-gray-500 w-full lg:w-[800px] h-[300px] text-justify  rounded-[10px] capitalize bg-gray-50"></p>
     </div>
   );
 }

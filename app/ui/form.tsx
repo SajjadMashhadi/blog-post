@@ -47,11 +47,11 @@ export default function Form({ post }: { post?: Post }) {
       </div>
 
       <div className="w-full flex flex-col sm:flex-row px-[20px] sm:p-0 justify-center gap-[20px]">
-        <label className="w-[80px]" htmlFor="title">
+        <label className="w-[80px] text-gray-600" htmlFor="title">
           Title:{" "}
         </label>
         <input
-          className=" w-full sm:w-[400px] border-[1px] border-blue-300 rounded-[5px] p-[5px] focus:outline-blue-500"
+          className=" w-full sm:w-[400px] border-[1px] border-gray-300 rounded-[5px] p-[5px] focus:outline-gray-400 "
           id="title"
           name="title"
           type="text"
@@ -79,11 +79,11 @@ export default function Form({ post }: { post?: Post }) {
           ))}
       </div>
       <div className=" w-full flex flex-col px-[20px] sm:p-0 sm:flex-row justify-center gap-[20px]">
-        <label className="w-[80px]" htmlFor="content">
+        <label className="w-[80px] text-gray-600" htmlFor="content">
           Content:{" "}
         </label>
         <textarea
-          className="w-full sm:w-[400px] h-[300px] border-[1px] border-blue-300 rounded-[5px] p-[5px] focus:outline-blue-500"
+          className="w-full sm:w-[400px] h-[300px] border-[1px] border-gray-300 rounded-[5px] p-[5px] focus:outline-gray-400 "
           id="content"
           name="content"
           defaultValue={post ? post.content : ""}
@@ -92,7 +92,7 @@ export default function Form({ post }: { post?: Post }) {
       </div>
       <div>
         <button
-          className="border-blue-500 hover:bg-blue-50 border-[1px] p-[5px] px-[20px] capitalize  rounded-[5px] text-blue-500 mt-[50px]"
+          className="border-gray-600 hover:bg-gray-50 border-[1px] p-[5px] px-[20px] capitalize  rounded-[5px] text-gray-600 mt-[50px]"
           type="submit"
           disabled={pending}
         >

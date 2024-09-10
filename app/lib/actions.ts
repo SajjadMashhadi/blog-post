@@ -58,11 +58,6 @@ export async function updatePost(
   prevState: State,
   formData: FormData
 ) {
-  // const { title, content } = UpdatePost.parse({
-  //   title: formData.get("title"),
-  //   content: formData.get("content"),
-  // });
-
   const validatedFields = UpdatePost.safeParse({
     title: formData.get("title"),
     content: formData.get("content"),
@@ -90,6 +85,7 @@ export async function updatePost(
   }
 
   revalidatePath("/posts");
+  revalidatePath(`/posts/${id}`);
   redirect("/posts");
 }
 
@@ -98,7 +94,7 @@ export async function deletePost(id: string) {
   try {
     await sql`DELETE FROM posts WHERE id = ${id}`;
     revalidatePath("/posts");
-    return { message: "Deleted Invoice." };
+    return { message: "Deleted Post." };
   } catch (error) {
     return {
       message: "Database Error: Failed to Delete Post.",

@@ -21,7 +21,7 @@ export default function Navbar() {
           key={link.name}
           href={link.href}
           className={clsx("font-bold capitalize text-[20px]", {
-            "text-blue-500 ": pathname === link.href,
+            "text-gray-800 ": pathname === link.href,
             "text-gray-400 ": pathname !== link.href,
           })}
         >
