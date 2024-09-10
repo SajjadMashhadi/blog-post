@@ -1,6 +1,6 @@
 import { fetchPostById } from "@/app/lib/data";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "@/app/posts/[id]/(overview)/loading";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const id = params.id;
