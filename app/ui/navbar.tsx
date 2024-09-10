@@ -5,8 +5,6 @@ import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { name: "home", href: "/" },
-
   { name: "posts", href: "/posts" },
   {
     name: "add post",
@@ -27,7 +25,7 @@ export default function Navbar() {
             "text-gray-400 ": pathname !== link.href,
           })}
         >
-          <p className="hidden md:block">{link.name}</p>
+          <p className=" block">{link.name}</p>
         </Link>
       ))}
     </div>
