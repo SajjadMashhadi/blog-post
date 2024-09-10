@@ -11,9 +11,11 @@ export default function PostCard({ post }: { post: Post }) {
       >
         {post.title}
       </Link>
-      <p className="text-gray-500 h-[110px] my-[10px] capitalize text-[12px]">
-        {post.content.slice(0, 300) + " ..."}
-      </p>
+      <Link href={`/posts/${post.id}`}>
+        <p className="text-gray-500 h-[110px] my-[10px] capitalize text-[12px] text-justify">
+          {post.content.slice(0, 250) + " ..."}
+        </p>
+      </Link>
       <div className="flex  gap-[10px] flex-row justify-evenly">
         <DeletePost id={post.id} />
         <Link
@@ -21,6 +23,12 @@ export default function PostCard({ post }: { post: Post }) {
           className="w-[70px] text-center border-gray-600 hover:bg-gray-100 border-[1px] p-[5px]  capitalize  rounded-[5px] text-[13px] text-gray-600"
         >
           edit
+        </Link>
+        <Link
+          href={`/posts/${post.id}`}
+          className="w-[70px] text-center border-gray-600 hover:bg-gray-100 border-[1px] p-[5px]  capitalize  rounded-[5px] text-[13px] text-gray-600"
+        >
+          view
         </Link>
       </div>
     </div>
